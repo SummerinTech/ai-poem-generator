@@ -1,5 +1,20 @@
 import axios from "axios";
 
+function generatePoem(event) {
+	event.preventDefault();
+
+	new Typewriter("#poem", {
+		strings: "La tombe dit à la rose",
+		autoStart: true,
+		delay: 1,
+		cursor: "",
+	});
+	poemElement.innerHTML = "La tombe dit à la rose";
+}
+
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
+
 async function showAIResponse(response) {
 	console.log(response.data);
 }
